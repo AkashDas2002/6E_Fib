@@ -18,7 +18,9 @@ public class Fib {
 	    return fib_recurrence(n-1) + fib_recurrence(n-2);
 	}
     }
-     /* These are class / instance methods because...
+     /* These are class methods because...
+
+       They can be called by without creating an instance of the class
     */
 
 
@@ -37,17 +39,19 @@ public class Fib {
 	    prev = tempCurrent;
 	    count++;
 	}
-        return current; // invalid Fibonacci number
+        return current;
     }
-    /* Time complexity:
-       Consider the size of the problem to be ...
+    /* Time complexity: Linear
+       Consider the size of the problem to be ... n
        
-       As the proxy for the time required, count...
+       As the proxy for the time required, count... the cost it takes
+       to set prev and current to new values each iteration (which is constant)
        
        Then cost of the the recurrence algorithm
-       grows ?? 
+       grows linearly
        as the size of the problem increases,
-       because ??
+       because the number of iterations increase linearly and each iteration
+       costs some constant amount
      */
 
 
@@ -61,16 +65,17 @@ public class Fib {
 	double phi = (1 + Math.sqrt(5)) / 2;
 	double psi = (1 - Math.sqrt(5)) / 2;
 	
-        return Math.sqrt(0.2) * (Math.pow(phi,n) - Math.pow(psi,n)); // invalid Fibonacci number
+        return Math.sqrt(0.2) * (Math.pow(phi,n) - Math.pow(psi,n));
     }
     /* Time complexity:
-       Consider the size of the problem to be ...
+       Consider the size of the problem to be ... n
        
-       As the proxy for the time required, count...
+       As the proxy for the time required, count... exponentiation of numbers
        
        Then cost of the the recurrence algorithm
-       grows ?? 
+       grows linearly
        as the size of the problem increases,
-       because ??
+       because taking the exponenet of a number takes linear time, and it is
+       done a constant number of times.
      */
 }
